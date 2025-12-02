@@ -1,0 +1,19 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    "*.agent.md": "markdown"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "yaml": true,
+    "json": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "servers": {
+    "github-mcp-server": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/x/all"
+    },
+    "aws-documentation": {
+      "command": "uvx",
+      "args": ["awslabs.aws-documentation-mcp-server@latest"]
+    },
+    "aws-diagram": {
+      "command": "uvx",
+      "args": ["awslabs.aws-diagram-mcp-server@latest"]
+    },
+    "aws-pricing": {
+      "command": "uvx",
+      "args": ["awslabs.aws-pricing-mcp-server@latest"],
+      "env": {
+        "AWS_PROFILE": "${input:awsProfile}",
+        "AWS_REGION": "${input:awsRegion}"
+      }
+    },
+    "terraform": {
+      "command": "uvx",
+      "args": ["awslabs.terraform-mcp-server@latest"],
+      "env": {
+        "AWS_PROFILE": "${input:awsProfile}",
+        "AWS_REGION": "${input:awsRegion}"
+      }
+    }
+  },
+  "inputs": [
+    {
+      "id": "awsProfile",
+      "type": "promptString",
+      "description": "AWS Profile to use",
+      "default": "default"
+    },
+    {
+      "id": "awsRegion",
+      "type": "promptString",
+      "description": "AWS Region",
+      "default": "us-east-1"
+    }
+  ]
+}
